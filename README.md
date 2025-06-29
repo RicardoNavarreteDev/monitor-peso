@@ -1,80 +1,75 @@
-📊 Monitor de Peso - Resumen del Proyecto
-📌 Descripción
-Este proyecto desarrolla una aplicación para monitorear y actualizar el peso de usuarios, poniendo énfasis en la calidad de software mediante pruebas automatizadas, integración continua y análisis de código.
+# 💪 Monitor de Peso
 
-🛠️ Tecnologías y Herramientas
-Herramienta	Uso Principal
-Java 17	Desarrollo del backend y lógica del proyecto
-Maven	Gestión de dependencias, compilación y pruebas
-JUnit 5	Pruebas unitarias
-Selenium WebDriver	Pruebas funcionales (automatización navegador)
-JMeter	Pruebas de rendimiento y carga
-SonarQube / SonarCloud	Análisis estático de calidad de código
-GitHub Actions	Integración continua y ejecución automatizada
-Python HTTP Server	Servidor local para pruebas de rendimiento
-Git	Control de versiones
+Un proyecto Java para monitorear y actualizar el peso de usuarios, aplicando **pruebas automatizadas**, **integración continua** y **análisis de calidad de código**.
 
-🚀 Proceso Realizado
-1. Desarrollo y pruebas unitarias
-Implementación de pruebas con JUnit 5 para validar la lógica de actualización de peso.
+---
 
-Validación de funcionalidades clave para asegurar la correcta operación.
+## 🚀 Tecnologías y Herramientas Utilizadas
 
-2. Pruebas funcionales con Selenium
-Automatización de pruebas que simulan la interacción de usuario en la interfaz web.
+| 🛠️ Herramienta           | 💡 Propósito                                                |
+|--------------------------|------------------------------------------------------------|
+| ☕ **Java 17**            | Desarrollo backend y lógica principal                      |
+| 🧩 **Maven**             | Gestión de dependencias y automatización de builds         |
+| ✅ **JUnit 5**            | Pruebas unitarias para validar la lógica del sistema       |
+| 🌐 **Selenium WebDriver** | Pruebas funcionales simulando interacción del usuario      |
+| ⚡ **JMeter**             | Pruebas de carga y rendimiento                             |
+| 🛡️ **SonarQube/SonarCloud** | Análisis estático de calidad y seguridad del código        |
+| 🔄 **GitHub Actions**     | Integración continua y ejecución automática de pruebas     |
+| 🐍 **Python HTTP Server** | Servidor local simple para pruebas con JMeter              |
+| 🌱 **Git**                | Control de versiones y flujo de trabajo en ramas           |
 
-Actualmente estas pruebas se ejecutan localmente, debido a limitaciones de entorno en GitHub Actions.
+---
 
-3. Pruebas de rendimiento con JMeter
-Simulación de carga con 50 usuarios concurrentes para evaluar tiempos de respuesta y estabilidad.
+## 📝 Proceso de Desarrollo y Validación
 
-Uso de un servidor HTTP local (Python HTTP Server) para alojar la aplicación web durante las pruebas.
+### 🎯 1. Pruebas Unitarias
+- Implementadas con **JUnit 5**.
+- Validan la lógica de actualización de peso de los usuarios.
 
-Recolección y análisis de métricas clave (latencia, throughput, errores).
+### 🧪 2. Pruebas Funcionales (Local)
+- Realizadas con **Selenium WebDriver** y ChromeDriver.
+- Simulan la interacción real con el formulario de actualización.
+- ⚠️ *Estas pruebas se ejecutan localmente por limitaciones en CI.*
 
-4. Estrategia de pruebas de regresión
-Integración de pruebas unitarias y funcionales en un único proyecto Maven.
+### 🔬 3. Pruebas de Rendimiento
+- Configuradas en **Apache JMeter** con:
+  - 50 usuarios concurrentes.
+  - Ramp-up de 5 segundos.
+  - Loop count de 5.
+- Resultados almacenados con Summary Report y Aggregate Report.
+- Para simular el entorno, se utilizó:
+  python -m http.server 8000
 
-Automatización para ejecutar estas pruebas en cada cambio de código para evitar regresiones.
 
-Uso de Git para control de versiones con ramas y revisiones.
+### 4. Pruebas de Regresión
+Todas las pruebas se integran con Maven para ejecutarse automáticamente.
+Estrategia:
+Versionado Git con ramas de desarrollo.
+Revisión de pruebas al agregar nuevas funcionalidades.
+Validación automática antes de merges.
 
-5. Integración Continua con GitHub Actions
-Pipeline configurado para:
+###🛡️ Análisis de Calidad (SonarQube)
+Se ejecutó el análisis con SonarQube Scanner for Maven de forma local
+Resultados:
+Métricas de calidad y cobertura generadas en la interfaz SonarQube.
+Metodología Clean as You Code activada para futuros cambios.
 
-Descargar código y dependencias.
+###⚠️ Retos Identificados
+Ejecución de Selenium en CI: GitHub Actions no permite usar ChromeDriver sin configuraciones avanzadas.
+Solución temporal: Mantener las pruebas funcionales en ejecución local.
+Acceso a puertos y rutas locales: Para JMeter y Selenium fue necesario un servidor HTTP local.
 
-Configurar Java 17.
+###🧭 Próximos Pasos
+Integrar Selenium en CI con Docker o Selenium Grid.
+Automatizar el análisis SonarQube dentro de GitHub Actions.
+Incrementar cobertura de pruebas funcionales y de rendimiento.
 
-Compilar proyecto.
+###✨ Conclusión
+Este proyecto demuestra un enfoque completo de:
+✅ Desarrollo Java
+✅ Pruebas unitarias y funcionales
+✅ Pruebas de rendimiento
+✅ Integración continua
+✅ Control de calidad con SonarQube
 
-Ejecutar pruebas unitarias automáticamente.
-
-Exclusión temporal de pruebas funcionales por limitaciones en el entorno CI.
-
-6. Análisis de Calidad con SonarQube
-Configuración para análisis estático local con Maven y SonarQube.
-
-Generación de reportes para monitorear calidad, cobertura y vulnerabilidades.
-
-Aplicación de la metodología “Clean as You Code” para mejorar continuamente el código.
-
-⚠️ Retos y Consideraciones
-Limitaciones en CI: Las pruebas Selenium con ChromeDriver no se ejecutan en GitHub Actions por incompatibilidades y permisos.
-
-Solución temporal: Ejecutar pruebas funcionales localmente; pruebas unitarias en CI.
-
-Importancia de adaptar pruebas para distintos entornos y garantizar estabilidad continua.
-
-📈 Próximos Pasos
-Implementar entorno Docker o Selenium Grid para pruebas funcionales automáticas en CI.
-
-Ampliar cobertura y variedad de pruebas.
-
-Automatizar análisis SonarQube dentro del pipeline CI.
-
-Incorporar pruebas de seguridad y experiencia de usuario.
-
-🎯 Conclusión
-Este proyecto sentó las bases para un desarrollo sostenible y de calidad, integrando buenas prácticas con pruebas automatizadas, integración continua y análisis estático, asegurando estabilidad, rendimiento y facilidad para futuras mejoras.
-
+Todo orientado a garantizar la calidad y mantenibilidad del software.
