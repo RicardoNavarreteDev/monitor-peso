@@ -48,26 +48,26 @@ Versionado Git con ramas de desarrollo.
 Revisión de pruebas al agregar nuevas funcionalidades.
 Validación automática antes de merges.
 
-###🛡️5. Análisis de Calidad (SonarQube)
+### 🛡️5. Análisis de Calidad (SonarQube)
 
 Se ejecutó el análisis con SonarQube Scanner for Maven de forma local
 Resultados:
 Métricas de calidad y cobertura generadas en la interfaz SonarQube.
 Metodología Clean as You Code activada para futuros cambios.
 
-###⚠️ 6. Retos Identificados
+### ⚠️ 6. Retos Identificados
 
 Ejecución de Selenium en CI: GitHub Actions no permite usar ChromeDriver sin configuraciones avanzadas.
 Solución temporal: Mantener las pruebas funcionales en ejecución local.
 Acceso a puertos y rutas locales: Para JMeter y Selenium fue necesario un servidor HTTP local.
 
-###🧭 7. Próximos Pasos
+### 🧭 7. Próximos Pasos
 
 Integrar Selenium en CI con Docker o Selenium Grid.
 Automatizar el análisis SonarQube dentro de GitHub Actions.
 Incrementar cobertura de pruebas funcionales y de rendimiento.
 
-###✨ Conclusión
+### ✨ Conclusión
 
 Este proyecto demuestra un enfoque completo de:
 ✅ Desarrollo Java
