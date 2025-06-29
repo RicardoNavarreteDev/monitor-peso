@@ -26,13 +26,10 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-maven-
 
-    - name: Build with Maven and run tests
-      run: mvn clean verify
-
-    - name: SonarQube Scan
+    - name: Build, test and SonarQube Scan
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn sonar:sonar \
+      run: mvn clean verify sonar:sonar \
         -Dsonar.projectKey=monitor-peso \
         -Dsonar.host.url=https://sonarcloud.io \
         -Dsonar.login=$SONAR_TOKEN
